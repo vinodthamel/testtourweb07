@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="assets/img/beverly.jpg" type="image/png">
+
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Beverly Tours</title>
+    </head>
+    <body>
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo" style="display:flex; align-items:center; gap:10px; font-weight:600;">
+                     
+    <img 
+        src="assets/img/beverly.jpg" 
+        alt="Beverly Tours & Travels Logo"
+        style="width:110px; height:auto;"
+    >
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link active-link">Home</a>
+                        </li>
+
+                       
+
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+
+
+                    <div class="nav__dark">
+                        <!-- Theme change button -->
+                        <span class="change-theme-name">Dark mode</span>
+                        <i class="ri-moon-line change-theme" id="theme-button"></i>
+                    </div>
+
+                    <i class="ri-close-line nav__close" id="nav-close"></i>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-function-line"></i>
+                </div>
+            </nav>
+        </header>
+        <!--==================== ONE DAY TOUR ====================-->
+<section class="tour section" id="tour">
+    <h2 class="section__title">One Day Tour</h2>
+
+    <div class="tour__container container">
+
+        <!-- ONLY 3 IMAGES -->
+        <div class="tour__gallery">
+            <img src="assets/img/bea05.jpg" alt="" class="tour__gallery-img">
+            <img src="assets/img/bea07.jpg" alt="" class="tour__gallery-img">
+            <img src="assets/img/bea09.jpg" alt="" class="tour__gallery-img">
+        </div>
+
+        <!-- Text Content -->
+        <div class="tour__content">
+            <h3 class="tour__title">Discover the essence of Sri Lanka in a single day</h3>
+
+            <p class="tour__description">
+                Discover the rich cultural heritage, breathtaking landscapes, and vibrant city life 
+                of Sri Lanka with our exclusive one-day tour packages. Whether you're a history 
+                enthusiast, nature lover, or simply looking to explore the island’s diverse beauty, 
+                our tours offer something for everyone.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!--==================== TOUR DETAILS ====================-->
+<section class="details section">
+    <div class="details__container container">
+
+        <!-- LEFT SIDE -->
+        <div class="details__box">
+            <h2 class="details__title">Highlights</h2>
+
+            <ul class="details__list">
+                <li><i class="ri-checkbox-circle-line"></i> Gangaramaya Temple</li>
+                <li><i class="ri-checkbox-circle-line"></i> Colombo National Museum</li>
+                <li><i class="ri-checkbox-circle-line"></i> Galle Face Green</li>
+                <li><i class="ri-checkbox-circle-line"></i> Temple of the Sacred Tooth Relic</li>
+                <li><i class="ri-checkbox-circle-line"></i> Royal Botanical Gardens</li>
+                <li><i class="ri-checkbox-circle-line"></i> Kandy Lake</li>
+                <li><i class="ri-checkbox-circle-line"></i> Elephant Orphanage</li>
+                <li><i class="ri-checkbox-circle-line"></i> Sigiriya Rock Fortress</li>
+                <li><i class="ri-checkbox-circle-line"></i> Dambulla Cave Temple</li>
+                <li><i class="ri-checkbox-circle-line"></i> Galle Fort</li>
+                <li><i class="ri-checkbox-circle-line"></i> Galle Lighthouse</li>
+                <li><i class="ri-checkbox-circle-line"></i> Wilpattu National Park</li>
+                <li><i class="ri-checkbox-circle-line"></i> Udawalawe National Park</li>
+            </ul>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="details__box included">
+            <h2 class="details__title">Included</h2>
+
+            <ul class="details__list">
+                <li><i class="ri-checkbox-circle-fill"></i> Hotel Fair</li>
+                <li><i class="ri-checkbox-circle-fill"></i> Transportation</li>
+                <li><i class="ri-checkbox-circle-fill"></i> Breakfast</li>
+                <li><i class="ri-checkbox-circle-fill"></i> Sightseeing</li>
+                <li><i class="ri-checkbox-circle-fill"></i> Travel Tax</li>
+                <li><i class="ri-checkbox-circle-fill"></i> Seasonal Food</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<section class="plan section">
+    <div class="plan__container container">
+
+        <h2 class="plan__title">Tour Plan</h2>
+
+        <div class="plan__tabs">
+            <button class="plan__tab active" data-plan="colombo">Colombo Tour</button>
+            <button class="plan__tab" data-plan="kandy">Kandy Tour</button>
+            <button class="plan__tab" data-plan="sigiriya">Sigiriya and Dambulla Tour</button>
+            <button class="plan__tab" data-plan="galle">Galle Tour</button>
+            <button class="plan__tab" data-plan="wild">Wilpattu or Udawalawe Tour</button>
+        </div>
+
+        <ul class="plan__list" id="plan-list"></ul>
+
+        <div id="map"></div>
+
+        <div class="plan__button">
+    <a href="https://wa.me/94715113949" target="_blank" class="plan__custom-btn">
+        Customize Your Tour
+    </a>
+</div>
+
+
+    </div>
+</section>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+        
+
+
+        
+            <!--==================== SUBSCRIBE ====================-->
+           <section id="contact" class="contact-section">
+
+    <h2 class="contact-title">Get In Touch With Us Now!</h2>
+
+    <p class="contact-description">
+        Planning your trip should be easy and stress-free. Contact us anytime 
+        for tour information, bookings, or custom travel arrangements. 
+        Our team is available 24/7 to provide prompt and friendly assistance.
+    </p>
+
+    <div class="contact-grid">
+
+        <div class="contact-box">
+            <i class="ri-whatsapp-line"></i>
+            <h3>WhatsApp</h3>
+            <p>+94 78 104 5495</p>
+            <p>+94 71 511 3949</p>
+        </div>
+
+        <div class="contact-box">
+            <i class="ri-mail-line"></i>
+            <h3>Email</h3>
+            <p>pdlakmalsanjeewa@yahoo.com</p>
+           
+        </div>
+
+        <div class="contact-box">
+    <i class="ri-map-pin-line"></i>
+    <h3>Location</h3>
+    <p>No. 150, B/7</p>
+    <p>Kadirana North, Demanhandiya, 93/A</p>
+    <p>Negombo</p>
+</div>
+
+        <div class="contact-box">
+            <i class="ri-time-line"></i>
+            <h3>Working Hours</h3>
+            <p>Available 24/7</p>
+            <p>Always Ready to Help</p>
+        </div>
+
+    </div>
+</section>
+
+
+            
+            
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+    <div class="footer__container">
+
+        <div class="footer__content">
+
+            <!-- Brand / About -->
+            <div class="footer__data">
+                <h3 class="footer__title">Beverly Tours</h3>
+                <p class="footer__description">
+                    Travel you choose the destination, <br>
+                    we offer you the experience.
+                </p>
+
+               <div class="footer__socials">
+    <a href="https://www.facebook.com/profile.php?id=61586719989060" 
+       target="_blank" 
+       class="footer__social">
+        <i class="ri-facebook-fill"></i>
+    </a>
+
+    <a href="https://wa.me/94715113949" 
+       target="_blank" 
+       class="footer__social">
+        <i class="ri-whatsapp-fill"></i>
+    </a>
+</div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer__data">
+    <h3 class="footer__subtitle">Quick Links</h3>
+    <a href="#home" class="footer__link">Home</a>
+    <a href="#place" class="footer__link">Our Tours</a>
+    <a href="#gallery" class="footer__link">Gallery</a>
+    <a href="#contact" class="footer__link">Contact Us</a>
+</div>
+
+
+            <!-- Contact Info -->
+            <div class="footer__data">
+                <h3 class="footer__subtitle">Contact</h3>
+                <p class="footer__info">
+                    <i class="ri-map-pin-line"></i>
+                    No. 150, B/7, Negombo
+                </p>
+
+                <p class="footer__info">
+                    <i class="ri-mail-line"></i>
+                    pdlakmalsanjeewa@yahoo.com
+                </p>
+
+                <p class="footer__info">
+                    <i class="ri-whatsapp-line"></i>
+                    +94 78 104 5495
+                </p>
+
+                <p class="footer__info">
+                    <i class="ri-whatsapp-line"></i>
+                    +94 71 511 3949
+                </p>
+            </div>
+
+            <!-- Working Hours -->
+            <div class="footer__data">
+                <h3 class="footer__subtitle">Working Hours</h3>
+                <p class="footer__text">Available 24/7</p>
+                <p class="footer__text">Always Ready to Help</p>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            <p>© 2026 Beverly Tours. All Rights Reserved.</p>
+
+            <div>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+         <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+        
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+        <a href="https://wa.me/94715113949" class="whatsapp-float" target="_blank">
+    <i class="ri-whatsapp-line"></i>
+</a>
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<!-- Map Container -->
+<div id="map" style="width: 100%; height: 420px; border-radius: 18px;"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="assets/img/beverly.jpg" type="image/png">
+
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Beverly Tours</title>
+    </head>
+    <body>
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo" style="display:flex; align-items:center; gap:10px; font-weight:600;">
+                     
+    <img 
+        src="assets/img/beverly.jpg" 
+        alt="Beverly Tours & Travels Logo"
+        style="width:110px; height:auto;"
+    >
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#discover" class="nav__link">Discover</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#gallery" class="nav__link">Gallery</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#place" class="nav__link">Our Tour</a>
+                        </li>
+
+                        
+                        
+
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+
+
+                    <div class="nav__dark">
+                        <!-- Theme change button -->
+                        <span class="change-theme-name">Dark mode</span>
+                        <i class="ri-moon-line change-theme" id="theme-button"></i>
+                    </div>
+
+                    <i class="ri-close-line nav__close" id="nav-close"></i>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-function-line"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+<section class="home" id="home">
+
+    <!-- ✅ Background Slider -->
+    <div class="home__slider">
+        <img src="assets/img/slide.png" class="home__img active">
+        <img src="assets/img/slide1.png" class="home__img">
+        <img src="assets/img/slide2.png" class="home__img">
+        <img src="assets/img/slide3.png" class="home__img">
+    </div>
+
+    <div class="home__container container grid">
+
+        <!-- ✅ Text Content -->
+        <div class="home__data">
+            <span class="home__data-subtitle">
+                Discover The Beauty of Sri Lanka
+            </span>
+
+            <h1 class="home__data-title">
+                Travel <br>
+                Sri Lanka With A <b>Trusted <br> Local Guide</b>
+            </h1>
+
+            <a href="https://wa.me/94785103949?text=Hello%20I%20need%20more%20details" class="button">
+                Contact Us
+            </a>
+        </div>
+
+        <!-- ✅ Social Icons -->
+        <div class="home__social">
+            <a href="https://www.facebook.com/profile.php?id=61586719989060" target="_blank" class="home__social-link">
+                <i class="ri-facebook-box-fill"></i>
+            </a>
+
+            <a href="https://wa.me/94715113949" target="_blank" class="home__social-link">
+                <i class="ri-whatsapp-fill"></i>
+            </a>
+        </div>
+
+        <!-- ✅ Info Card -->
+        <div class="home__info" style="
+            display:flex;
+            align-items:center;
+            gap:20px;
+            background:#0b5f6a;
+            padding:20px;
+            max-width:420px;
+        ">
+
+            <!-- Text side -->
+            <div style="flex:1; color:#fff;">
+                <span style="font-size:14px; opacity:.9;">
+                    5 best places to visit
+                </span><br>
+
+                <a href="#gallery" style="
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    color:#fff;
+    margin-top:8px;
+    text-decoration:none;
+    font-weight:500;
+">
+    More →
+</a>
+
+            </div>
+
+            <!-- Image side -->
+            <div style="
+                width:160px;
+                height:200px;
+                overflow:hidden;
+                border-radius:6px;
+            ">
+                <img
+                    id="placeImage"
+                    src="assets/img/sigiriya.jpg"
+                    style="
+                        width:100%;
+                        height:100%;
+                        object-fit:cover;
+                        transition:opacity .8s ease;
+                    "
+                >
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ✅ Background Slider Script -->
+<script>
+window.addEventListener("load", () => {
+    const slides = document.querySelectorAll(".home__img");
+    let index = 0;
+
+    setInterval(() => {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+    }, 3500);
+});
+</script>
+
+<!-- ✅ Places Image Rotator Script -->
+<script>
+const images = [
+    "assets/img/sigiriya.jpg",
+    "assets/img/galle.jpg",
+    "assets/img/daladatemple.jpg"
+];
+
+let imgIndex = 0;
+const placeImg = document.getElementById("placeImage");
+
+setInterval(() => {
+    placeImg.style.opacity = 0;
+
+    setTimeout(() => {
+        imgIndex = (imgIndex + 1) % images.length;
+        placeImg.src = images[imgIndex];
+        placeImg.style.opacity = 1;
+    }, 400);
+
+}, 3000);
+</script>
+
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section" id="about">
+                <div class="about__container container grid">
+                    <div class="about__data">
+                        <h2 class="section__title about__title">Your Journey, <br> Your Trusted Travel Guide in Sri Lanka</h2>
+                        <p class="about__description">You can find the most beautiful and peaceful beaches with special discounts. Book your tour now and enjoy the best coastal experience.
+                        </p>
+                         <!-- Feature 1 -->
+                    <div style="display:flex;flex-direction:row;align-items:flex-start;flex-wrap:nowrap;gap:16px;margin-bottom:28px;">
+                        <div style="font-size:32px;color:#2c7be5;min-width:40px;">
+                            <i class="ri-map-pin-line"></i>
+                        </div>
+                        <div style="flex:1;">
+                            <h3 style="margin:0 0 6px 0;font-size:18px;font-weight:600;">
+                                Exclusive Trip
+                            </h3>
+                            <p style="margin:0;font-size:15px;line-height:1.6;color:#555;">
+                                Unlocking the world’s hidden gems one exclusive adventure at a time
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div style="display:flex;flex-direction:row;align-items:flex-start;flex-wrap:nowrap;gap:16px;margin-bottom:28px;">
+                        <div style="font-size:32px;color:#2c7be5;min-width:40px;">
+                            <i class="ri-shield-check-line"></i>
+                        </div>
+                        <div style="flex:1;">
+                            <h3 style="margin:0 0 6px 0;font-size:18px;font-weight:600;">
+                                Safety First Always
+                            </h3>
+                            <p style="margin:0;font-size:15px;line-height:1.6;color:#555;">
+                                Safety first, always. Because every adventure deserves to be a safe one.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div style="display:flex;flex-direction:row;align-items:flex-start;flex-wrap:nowrap;gap:16px;">
+                        <div style="font-size:32px;color:#2c7be5;min-width:40px;">
+                            <i class="ri-user-star-line"></i>
+                        </div>
+                        <div style="flex:1;">
+                            <h3 style="margin:0 0 6px 0;font-size:18px;font-weight:600;">
+                                Professional Guide
+                            </h3>
+                            <p style="margin:0;font-size:15px;line-height:1.6;color:#555;">
+                                Guiding you through excellence where expertise meets experience
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                        <a href="https://wa.me/94785103949" class="button" target="_blank">
+    Contact Us
+</a>
+
+                    </div>
+
+                    <div class="about__img">
+                        <div class="about__img-overlay">
+                            <img src="assets/img/sigiriya.jpg" alt="" class="about__img-one">
+                        </div>
+
+                        <div class="about__img-overlay">
+                            <img src="assets/img/anuradapura.jpg" alt="" class="about__img-two">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!--==================== DISCOVER ====================-->
+            <section class="discover section" id="discover">
+                <h2 class="section__title">Discover the most <br> attractive places</h2>
+                
+                <div class="discover__container container swiper-container">
+                    <div class="swiper-wrapper">
+                        <!--==================== DISCOVER 1 ====================-->
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/Colombo.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Colombo</h2>
+                                <span class="discover__description">12 tours available</span>
+                            </div>
+                        </div>
+
+                        <!--==================== DISCOVER 2 ====================-->
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/galle.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Galle</h2>
+                                <span class="discover__description">18 tours available</span>
+                            </div>
+                        </div>
+
+                        <!--==================== DISCOVER 3 ====================-->
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/Yala.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Yala</h2>
+                                <span class="discover__description">9 tours available</span>
+                            </div>
+                        </div>
+
+                        <!--==================== DISCOVER 4 ====================-->
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/Ella.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Ella</h2>
+                                <span class="discover__description">15 tours available</span>
+                            </div>
+                        </div>
+
+                        <!--==================== DISCOVER 5 ====================-->
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/Kandy.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Kandy</h2>
+                                <span class="discover__description">14 tours available</span>
+                            </div>
+                        </div>
+
+                        <!--==================== DISCOVER 6====================-->
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/sigiriya.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Sigiriya</h2>
+                                <span class="discover__description">11 tours available</span>
+                            </div>
+                        </div>
+
+                        <!--==================== DISCOVER 7 ====================-->
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/Anuradhapura.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Anuradhapura</h2>
+                                <span class="discover__description">9 tours available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== EXPERIENCE ====================-->
+            <section class="experience section">
+                <h2 class="section__title">With Our Experience <br> We Will Serve You</h2>
+
+                <div class="experience__container container grid">
+                    <div class="experience__content grid">
+                        <div class="experience__data">
+                            <h2 class="experience__number">20</h2>
+                            <span class="experience__description">Year <br> Experience</span>
+                        </div>
+
+                        <div class="experience__data">
+                            <h2 class="experience__number">75</h2>
+                            <span class="experience__description">Complete <br> tours</span>
+                        </div>
+
+                        <div class="experience__data">
+                            <h2 class="experience__number">650+</h2>
+                            <span class="experience__description">Tourist <br> Destination</span>
+                        </div>
+                    </div>
+
+                    <div class="experience__img grid">
+                        <div class="experience__overlay">
+                            <img src="assets/img/slide.png" alt="" class="experience__img-one">
+                        </div>
+                        
+                        <div class="experience__overlay">
+                            <img src="assets/img/quens.jpg" alt="" class="experience__img-two">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== VIDEO ====================-->
+            <section class="video section">
+                <h2 class="section__title">Video Tour</h2>
+
+                <div class="video__container container">
+                    <p class="video__description">Find out more with our video of the most beautiful and 
+                        pleasant places for you and your family.
+                    </p>
+
+                    <div class="video__content">
+                        <video id="video-file">
+                            <source src="assets/video/sri.mp4" type="video/mp4">
+                        </video>
+
+                        <button class="button button--flex video__button" id="video-button">
+                            <i class="ri-play-line video__button-icon" id="video-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" class="gallery-section">
+
+                        <h2>Gallery</h2>
+
+                        <div class="gallery-filters">
+                            <button class="active" data-filter="all">All</button>
+                            <button data-filter="adventure">Adventure & Activities</button>
+                            <button data-filter="reli">Religious Sites</button>
+                            <button data-filter="hill">Hill Country</button>
+                            <button data-filter="wildlife">Wildlife</button>
+                            <button data-filter="beach">Beach</button>
+                        </div>
+
+                        <div class="gallery-grid">
+            <!--==================== adventure ====================-->
+
+                            <div class="gallery-item adventure">
+                                <img src="assets/img/adv01.jpg">
+                            </div>
+                            <div class="gallery-item adventure">
+                                <img src="assets/img/adv02.jpg">
+                            </div>
+                            <div class="gallery-item adventure">
+                                <img src="assets/img/adv03.jpg">
+                            </div>
+                            <div class="gallery-item adventure">
+                                <img src="assets/img/adv04.jpg">
+                            </div>
+                            <div class="gallery-item adventure">
+                                <img src="assets/img/adv5.jpg">
+                            </div>
+                            
+                            <div class="gallery-item adventure">
+                                <img src="assets/img/adv06.jpg">
+                            </div>
+                            <div class="gallery-item adventure">
+                                <img src="assets/img/adv07.jpg">
+                            </div>
+                            <div class="gallery-item adventure">
+                                <img src="assets/img/adv08.jpg">
+                            </div>
+
+                            <!--==================== religious ====================-->
+
+                            <div class="gallery-item reli">
+                                <img src="assets/img/rel01.jpg">
+                            </div>
+                            <div class="gallery-item reli">
+                                <img src="assets/img/rel02.jpg">
+                            </div>
+                            <div class="gallery-item reli">
+                                <img src="assets/img/rel03.jpg">
+                            </div>
+                            <div class="gallery-item reli">
+                                <img src="assets/img/rel04.jpg">
+                            </div>
+                            <div class="gallery-item reli">
+                                <img src="assets/img/rel05.jpg">
+                            </div>
+                            
+                            <div class="gallery-item reli">
+                                <img src="assets/img/rel07.jpg">
+                            </div>
+                            <div class="gallery-item reli">
+                                <img src="assets/img/rel08.jpg">
+                            </div>
+                            <div class="gallery-item reli">
+                                <img src="assets/img/rel09.jpg">
+                            </div>
+
+                             <!--==================== hill country ====================-->
+
+                            <div class="gallery-item hill">
+                                <img src="assets/img/hil02.jpg">
+                            </div>
+                            <div class="gallery-item hill">
+                                <img src="assets/img/hil03.jpg">
+                            </div>
+                            <div class="gallery-item hill">
+                                <img src="assets/img/hil04.jpg">
+                            </div>
+                            <div class="gallery-item hill">
+                                <img src="assets/img/hil05.jpg">
+                            </div>
+                            <div class="gallery-item hill">
+                                <img src="assets/img/hil06.jpg">
+                            </div>
+                            <div class="gallery-item hill">
+                                <img src="assets/img/hil07.jpg">
+                            </div>
+                            <div class="gallery-item hill">
+                                <img src="assets/img/hil08.jpg">
+                            </div>
+                            <div class="gallery-item hill">
+                                <img src="assets/img/hel09.jpg">
+                            </div>
+
+                             <!--==================== wild life ====================-->
+
+                            <div class="gallery-item wildlife">
+                                <img src="assets/img/wid01.jpg">
+                            </div>
+                             <div class="gallery-item wildlife">
+                                <img src="assets/img/wid02.jpg">
+                            </div>
+                             <div class="gallery-item wildlife">
+                                <img src="assets/img/wid03.jpg">
+                            </div>
+                             <div class="gallery-item wildlife">
+                                <img src="assets/img/wid04.jpg">
+                            </div>
+                             <div class="gallery-item wildlife">
+                                <img src="assets/img/wid05.jpg">
+                            </div>
+                             <div class="gallery-item wildlife">
+                                <img src="assets/img/wid06.jpg">
+                            </div>
+                             <div class="gallery-item wildlife">
+                                <img src="assets/img/wil07.jpg">
+                            </div>
+                             <div class="gallery-item wildlife">
+                                <img src="assets/img/wid08.jpg">
+                            </div>
+                             <div class="gallery-item wildlife">
+                                <img src="assets/img/wid09.jpg">
+                            </div>
+                            
+                             <!--==================== beach ====================-->
+
+                            <div class="gallery-item beach">
+                                <img src="assets/img/bea01.jpg">
+                            </div>
+                            <div class="gallery-item beach">
+                                <img src="assets/img/bea02.jpg">
+                            </div>
+                            <div class="gallery-item beach">
+                                <img src="assets/img/bea03.jpg">
+                            </div>
+                            <div class="gallery-item beach">
+                                <img src="assets/img/bea04.jpg">
+                            </div>
+                            <div class="gallery-item beach">
+                                <img src="assets/img/bea05.jpg">
+                            </div>
+                            <div class="gallery-item beach">
+                                <img src="assets/img/bea06.jpg">
+                            </div>
+                            <div class="gallery-item beach">
+                                <img src="assets/img/bea07.jpg">
+                            </div>
+                            <div class="gallery-item beach">
+                                <img src="assets/img/bea08.jpg">
+                            </div>
+                            <div class="gallery-item beach">
+                                <img src="assets/img/be06.jpg">
+                            </div>
+
+                        </div>
+
+                        <div class="show-btn">
+                            <button id="toggleBtn">Show More</button>
+                        </div>
+                    </section>
+
+                    <div class="lightbox" id="lightbox">
+                        <span id="closeBtn">&times;</span>
+                        <img id="lightbox-img">
+                    </div>
+
+
+            <!--==================== PLACES ====================-->
+            <section class="place section" id="place">
+                <h2 class="section__title">Our Tour Package</h2>
+
+                <div class="place__container container grid">
+                    <!--==================== PLACES CARD 1 ====================-->
+                    <div class="place__card">
+                        <img src="assets/img/Colombo.jpg" alt="" class="place__img">
+                        
+                        <div class="place__content">
+                            <span class="place__rating">
+                                <i class="ri-star-line place__rating-icon"></i>
+                                <span class="place__rating-number">4,8</span>
+                            </span>
+
+                            <div class="place__data">
+                                <h3 class="place__title">Day One</h3>
+                                <span class="place__subtitle"> Tour Package</span>
+                                <span class="place__price">Detail View</span>
+                            </div>
+                        </div>
+                        <a href="dayone.html" class="button button--flex place__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+
+                    </div>
+
+                    <!--==================== PLACES CARD 2 ====================-->
+                    <div class="place__card">
+                        <img src="assets/img/hil03.jpg" alt="" class="place__img">
+                        
+                        <div class="place__content">
+                            <span class="place__rating">
+                                <i class="ri-star-line place__rating-icon"></i>
+                                <span class="place__rating-number">5,0</span>
+                            </span>
+
+                            <div class="place__data">
+                                <h3 class="place__title">3 Days</h3>
+                                <span class="place__subtitle"> Tour Package</span>
+                                <span class="place__price">Detail View</span>
+                            </div>
+                        </div>
+                        <a href="3days.html" class="button button--flex place__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+
+                    </div>
+
+                    <!--==================== PLACES CARD 3  ====================-->
+                    <div class="place__card">
+                        <img src="assets/img/wid05.jpg" alt="" class="place__img">
+                        
+                        <div class="place__content">
+                            <span class="place__rating">
+                                <i class="ri-star-line place__rating-icon"></i>
+                                <span class="place__rating-number">4,9</span>
+                            </span>
+
+                            <div class="place__data">
+                                <h3 class="place__title">7 Days</h3>
+                                <span class="place__subtitle"> Tour Package</span>
+                                <span class="place__price">Detail View</span>
+                            </div>
+                        </div>
+                        <a href="7days.html" class="button button--flex place__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+
+                    </div>
+
+                    <!--==================== PLACES CARD 4 ====================-->
+                    <div class="place__card">
+                        <img src="assets/img/Ella.jpg" alt="" class="place__img">
+                        
+                        <div class="place__content">
+                            <span class="place__rating">
+                                <i class="ri-star-line place__rating-icon"></i>
+                                <span class="place__rating-number">4,8</span>
+                            </span>
+
+                            <div class="place__data">
+                                <h3 class="place__title">10 Days</h3>
+                                <span class="place__subtitle"> Tour Package</span>
+                                <span class="place__price">Detail View</span>
+                            </div>
+                        </div>
+                        <a href="10days.html" class="button button--flex place__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+
+                    </div>
+
+                    <!--==================== PLACES CARD 5 ====================-->
+                    <div class="place__card">
+                        <img src="assets/img/hil02.jpg" alt="" class="place__img">
+                        
+                        <div class="place__content">
+                            <span class="place__rating">
+                                <i class="ri-star-line place__rating-icon"></i>
+                                <span class="place__rating-number">4,8</span>
+                            </span>
+
+                            <div class="place__data">
+                                <h3 class="place__title">12 Days</h3>
+                                <span class="place__subtitle"> Tour Package</span>
+                                <span class="place__price">Detail View</span>
+                            </div>
+                        </div>
+                        <a href="12days.html" class="button button--flex place__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+
+                    </div>
+
+                    <!--==================== PLACES CARD 6 ====================-->
+                    <div class="place__card">
+                        <img src="assets/img/Yala.jpg" alt="" class="place__img">
+                        
+                        <div class="place__content">
+                            <span class="place__rating">
+                                <i class="ri-star-line place__rating-icon"></i>
+                                <span class="place__rating-number">5,0</span>
+                            </span>
+
+                            <div class="place__data">
+                                <h3 class="place__title">customize</h3>
+                                <span class="place__subtitle"> Tour Package</span>
+                                <span class="place__price">Detail View</span>
+                            </div>
+                        </div>
+                        <a href="customize.html" class="button button--flex place__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+
+                    </div>
+
+                    
+            </section>
+
+            <!--==================== SUBSCRIBE ====================-->
+           <section id="contact" class="contact-section">
+
+    <h2 class="contact-title">Get In Touch With Us Now!</h2>
+
+    <p class="contact-description">
+        Planning your trip should be easy and stress-free. Contact us anytime 
+        for tour information, bookings, or custom travel arrangements. 
+        Our team is available 24/7 to provide prompt and friendly assistance.
+    </p>
+
+    <div class="contact-grid">
+
+        <div class="contact-box">
+    <i class="ri-whatsapp-line"></i>
+    <h3>WhatsApp</h3>
+
+    
+    <p style="margin-top:10px;"><strong>Ben Blackett</strong></p>
+    <p>+94 71 511 3949</p>
+    <p><strong>Rooth Blackett</strong></p>
+    <p>+94 78 104 5495</p>
+</div>
+
+
+        <div class="contact-box">
+            <i class="ri-mail-line"></i>
+            <h3>Email</h3>
+            <p>beverlytoursslk@yahoo.com</p>
+           
+        </div>
+
+        <div class="contact-box">
+    <i class="ri-map-pin-line"></i>
+    <h3>Location</h3>
+<a 
+  href="https://maps.app.goo.gl/4fPokHTwPZyaHkFX7?g_st=iw" 
+  target="_blank"
+  style="color: var(--title-color); text-decoration: none;"
+>
+    No. 150/B/7,<br>
+    Kadirana North,<br>
+    Demanhandiya
+</a>
+
+    
+</div>
+
+
+
+        <div class="contact-box">
+            <i class="ri-time-line"></i>
+            <h3>Working Hours</h3>
+            <p>Available 24/7</p>
+            <p>Always Ready to Help</p>
+        </div>
+
+    </div>
+           </section>
+
+
+            
+            
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+    <div class="footer__container">
+
+        <div class="footer__content">
+
+            <!-- Brand / About -->
+            <div class="footer__data">
+                <h3 class="footer__title">Beverly Tours</h3>
+                <p class="footer__description">
+                    Travel you choose the destination, <br>
+                    we offer you the experience.
+                </p>
+
+               <div class="footer__socials">
+    <a href="https://www.facebook.com/profile.php?id=61586719989060" 
+       target="_blank" 
+       class="footer__social">
+        <i class="ri-facebook-fill"></i>
+    </a>
+
+    <a href="https://wa.me/94785103949" 
+       target="_blank" 
+       class="footer__social">
+        <i class="ri-whatsapp-fill"></i>
+    </a>
+</div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer__data">
+    <h3 class="footer__subtitle">Quick Links</h3>
+    <a href="#home" class="footer__link">Home</a>
+    <a href="#place" class="footer__link">Our Tours</a>
+    <a href="#gallery" class="footer__link">Gallery</a>
+    <a href="#contact" class="footer__link">Contact Us</a>
+</div>
+
+
+            <!-- Contact Info -->
+            <div class="footer__data">
+    <h3 class="footer__subtitle">Contact</h3>
+
+    <p class="footer__info">
+        <i class="ri-map-pin-line"></i>
+        <a href="https://maps.app.goo.gl/4fPokHTwPZyaHkFX7?g_st=iw"
+           target="_blank"
+           class="footer__link-reset">
+            No. 150/B/7, Kadirana North, Demanhandiya
+        </a>
+    </p>
+
+    <p class="footer__info">
+        <i class="ri-mail-line"></i>
+        beverlytoursslk@yahoo.com
+    </p>
+
+    
+    <!-- Ben -->
+    <p class="footer__info">
+        <i class="ri-whatsapp-line"></i>
+        <a href="https://wa.me/94715113949" target="_blank" class="footer__link-reset">
+            Ben Blackett<br>
+            +94 71 511 3949
+        </a>
+    </p>
+    <!-- Rooth -->
+    <p class="footer__info">
+        <i class="ri-whatsapp-line"></i>
+        <a href="https://wa.me/94781045495" target="_blank" class="footer__link-reset">
+            Rooth Blackett<br>
+            +94 78 104 5495
+        </a>
+    </p>
+</div>
+
+
+            <!-- Working Hours -->
+            <div class="footer__data">
+                <h3 class="footer__subtitle">Working Hours</h3>
+                <p class="footer__text">Available 24/7</p>
+                <p class="footer__text">Always Ready to Help</p>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            <p>© 2026 Beverly Tours. All Rights Reserved.</p>
+
+            <div>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+
+    </div>
+        </footer>
+
+         <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+        
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+        <a href="https://wa.me/94785103949" class="whatsapp-float" target="_blank">
+    <i class="ri-whatsapp-line"></i>
+</a>
+
+    </body>
+</html>
